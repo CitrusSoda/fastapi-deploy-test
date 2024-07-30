@@ -12,11 +12,11 @@ people = {
 def read_root():
     return "4 team server is running"
 
-@app.get("/teams")
+@app.get("/four-team-people")
 def get_teams():
     return list(people.keys())
 
-@app.get("/teams/{team_name}")
+@app.get("/four-team-people/{team_name}")
 def get_team(person: str):
     if person not in people:
         raise HTTPException(status_code=404, detail="Person not found")
